@@ -37,7 +37,7 @@ public class Program
     {
         var builder = Host.CreateApplicationBuilder(args);
 
-        builder.Configuration.AddJsonFile("appsettings.json", optional: false);
+        builder.Configuration.AddJsonFile(Path.Combine(AppContext.BaseDirectory, "appsettings.json"), optional: false);
 
         builder.Logging.ClearProviders();
         builder.Services.AddSerilog(Log.Logger, dispose: true);
